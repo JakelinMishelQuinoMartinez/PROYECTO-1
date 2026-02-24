@@ -1,8 +1,14 @@
 [
     {
-        "Título": "Libro",
-        "Autor": "Carlos",
-        "Género": "Comedia",
+        "Título": "El Principito",
+        "Autor": "Pablo",
+        "Género": "Fantasía",
         "Puntuación": 5
+    },
+    {
+        "Título": "Orgullo y Prejuicio",
+        "Autor": "Jean Austen",
+        "Género": "Romance",
+        "Puntuación": 10
     }
 ]
