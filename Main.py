@@ -34,8 +34,13 @@ def ejecucion_menu_uno():
            if opcion == 1:
                print("\n--- Añadiendo Libro ---")
                Colección = leer_json('Libros.json')
+               titulo_nuevo = input("Ingrese el Título: ").strip()
+               titulos_existentes = {libro['Título'].lower() for libro in Colección}
+               if titulo_nuevo.lower() in titulos_existentes:
+                    print(f"Error: El libro '{titulo_nuevo}' ya existe.")
+                    continue               
                Nuevo_Libro = {
-                   "Título": input("Ingrese el Título: ").strip(),
+                   "Título": titulo_nuevo,
                    "Autor": input("Ingrese el Autor: ").strip(),
                    "Género": input("Ingrese el Género: ").strip(),
                    "Puntuación": int(input("Ingrese la Puntuación (1-10): "))
@@ -46,8 +51,13 @@ def ejecucion_menu_uno():
            elif opcion == 2:
                print("\n--- Añadiendo Película ---")
                Colección = leer_json('Películas.json')
+               titulo_nuevo = input("Ingrese el Título: ").strip()
+               titulos_existentes = {pelicula['Título'].lower() for pelicula in Colección}
+               if titulo_nuevo.lower() in titulos_existentes:
+                    print(f"Error: La Película '{titulo_nuevo}' ya existe.")
+                    continue 
                Nueva_Película = {
-                   "Título": input("Ingrese el Título: ").strip(),
+                   "Título": titulo_nuevo,
                    "Director": input("Ingrese el Director: ").strip(),
                    "Género": input("Ingrese el Género: ").strip(),
                    "Puntuación": int(input("Ingrese la Puntuación (1-10): "))
@@ -58,8 +68,13 @@ def ejecucion_menu_uno():
            elif opcion == 3:
                print("\n--- Añadiendo Música ---")
                Colección = leer_json('Música.json')
+               titulo_nuevo = input("Ingrese el Título: ").strip()
+               titulos_existentes = {musica['Título'].lower() for musica in Colección}
+               if titulo_nuevo.lower() in titulos_existentes:
+                    print(f"Error: La Música '{titulo_nuevo}' ya existe.")
+                    continue 
                Nueva_Música = {
-                   "Título": input("Ingrese el Título: ").strip(),
+                   "Título": titulo_nuevo,
                    "Artista": input("Ingrese el Artista: ").strip(),
                    "Género": input("Ingrese el Género: ").strip(),
                    "Puntuación": int(input("Ingrese la Puntuación (1-10): "))
