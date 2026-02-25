@@ -78,9 +78,8 @@ def menu_cinco():
         Eliminar un Elemento
     =============================================
     ¿Cómo deseas eliminar?
-    1. Eliminar por Título
-    2. Eliminar por Identificador Único
-    3. Regresar al Menú Principal
+    1. Eliminar por ID/Título
+    2. Regresar al Menú Principal
     =============================================
     """
     print(menu)
@@ -122,9 +121,9 @@ def selecciona_opcion_principal():
         print("El valor ingresado no es un número, intente de nuevo")
         return -1
     
-def selecciona_opcion_al3():
+def selecciona_opcion_al2():
     try:
-        opc = int(input("Seleccione una opción (1-3): "))
+        opc = int(input("Seleccione una opción (1-2): "))
         return opc
     except ValueError:
         print("El valor ingresado no es un número, intente de nuevo")

@@ -183,8 +183,8 @@ def ejecucion_menu_cuatro():
 def ejecucion_menu_cinco():
     while True:
         menu_cinco()
-        opcion = selecciona_opcion_al3()
-        if opcion == 3: break
+        opcion = selecciona_opcion_al2()
+        if opcion == 2: break
         if opcion == 1:
             titulo = input("Título a eliminar: ").strip()
             encontrados = buscar_en_todos_los_archivos("Título", titulo)
