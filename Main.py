@@ -20,6 +20,8 @@ def Ejecucion_menu_principal():
         elif opcion == 7:
             ejecucion_menu_siete()
         elif opcion == 8:
+            ejecucion_menu_ocho()            
+        elif opcion == 9:
             print("Saliendo...")
             break
         else:
@@ -216,6 +218,30 @@ def listar_todos_los_elementos():
 
 def ejecucion_menu_siete():
     print("¡Archivos cargados y guardados!")
+
+def ejecucion_menu_ocho():
+    elementos_totales
+    promedio_general
+
+def elementos_totales():
+    datos = leer_json('Libros.json') + leer_json('Películas.json') + leer_json('Música.json')
+    total = len('Libros.json') + len('Películas.json') + len('Música.json')
+    if not datos:
+        return [0]
+    print(f"""
+          1. Cantidad total de Libros= {len('Libros.json')}
+          2. Cantidad total de Películas= {len('Películas.json')}
+          3. Cantidad total de Música= {len('Libros.json')}
+          4. Cantidad Total de elementos= {total}""")
+
+def promedio_general(categoria_archivo):
+    datos = leer_json('Libros.json') + leer_json('Películas.json') + leer_json('Música.json')
+    if not datos:
+        return [0]
+    suma_total = sum(item['Puntuaión'] for item in datos)
+    promedio = suma_total / len(datos)
+    print("El Ptomedio Total de las Puntuaciones es {promedio}")
+    return promedio
 
 if __name__ == "__main__":
     Ejecucion_menu_principal()

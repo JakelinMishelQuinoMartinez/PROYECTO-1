@@ -10,7 +10,8 @@ def menu_principal():
     5. Eliminar un Elemento
     6. Ver Elementos por Categoría
     7. Guardar y Cargar Colección
-    8. Salir
+    8. Estadísticas de Toda la Colección
+    9. Salir
     =============================================
     """
     print(menu)
