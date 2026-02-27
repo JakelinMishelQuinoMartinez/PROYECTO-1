@@ -220,27 +220,50 @@ def ejecucion_menu_siete():
     print("¡Archivos cargados y guardados!")
 
 def ejecucion_menu_ocho():
-    elementos_totales
-    promedio_general
+    conteo = elementos_totales()
+    promedio = promedio_general()
+    estadisticas = {
+        "conteo_por_categoria": {
+            "Libros": conteo['libros'],
+            "Películas": conteo['peliculas'],
+            "Música": conteo['musica']
+        },
+        "total_elementos": conteo['total'],
+        "promedio_puntuacion_general": promedio
+    }
+    guardar_estadisticas(estadisticas)
+
+def guardar_estadisticas(datos):
+    with open('Estadisticas.json', "w", encoding='utf-8') as archivo:
+        json.dump(datos, archivo, ensure_ascii=False, indent=4)
 
 def elementos_totales():
-    datos = leer_json('Libros.json') + leer_json('Películas.json') + leer_json('Música.json')
-    total = len('Libros.json') + len('Películas.json') + len('Música.json')
-    if not datos:
-        return [0]
-    print(f"""
-          1. Cantidad total de Libros= {len('Libros.json')}
-          2. Cantidad total de Películas= {len('Películas.json')}
-          3. Cantidad total de Música= {len('Libros.json')}
-          4. Cantidad Total de elementos= {total}""")
+    libros = leer_json('Libros.json')
+    peliculas = leer_json('Películas.json')
+    musica = leer_json('Música.json')
+    total =  len(libros) + len(peliculas) + len(musica)
+    cant_libros = len(libros) if libros else "LA COLECCIÓN ESTÁ VACÍA"
+    cant_peliculas = len(peliculas) if peliculas else "LA COLECCIÓN ESTÁ VACÍA"
+    cant_musica = len(musica) if musica else "LA COLECCIÓN ESTÁ VACÍA"
+    print("-------------------------------------------------------")    
+    print("           ESTADÍSTICAS DE COLECCIÓN                   ")
+    print("-------------------------------------------------------")
+    print(f"1. Cantidad total de Libros=    {cant_libros}")
+    print(f"2. Cantidad total de Películas= {cant_peliculas}")
+    print(f"3. Cantidad total de Música=    {cant_musica }")
+    print("-------------------------------------------------------")
+    print(f"4. Cantidad TOTAL de elementos= {total}")
+    print("-------------------------------------------------------")
+    return {'libros': len(libros), 'peliculas': len(peliculas), 'musica': len(musica), 'total': total}
 
-def promedio_general(categoria_archivo):
+def promedio_general():
     datos = leer_json('Libros.json') + leer_json('Películas.json') + leer_json('Música.json')
     if not datos:
-        return [0]
-    suma_total = sum(item['Puntuaión'] for item in datos)
+        print("No hay datos a promediar")
+        return 0
+    suma_total = sum(item['Puntuación'] for item in datos)
     promedio = suma_total / len(datos)
-    print("El Ptomedio Total de las Puntuaciones es {promedio}")
+    print(f"5. Promedio Total de las Puntuaciones:  {promedio} \n")
     return promedio
 
 if __name__ == "__main__":

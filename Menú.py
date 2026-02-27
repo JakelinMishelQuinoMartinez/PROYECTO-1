@@ -116,7 +116,7 @@ def menu_siete():
 
 def selecciona_opcion_principal():
     try:
-        opc = int(input("Seleccione una opción (1-8): "))
+        opc = int(input("Seleccione una opción (1-9): "))
         return opc
     except ValueError:
         print("El valor ingresado no es un número, intente de nuevo")

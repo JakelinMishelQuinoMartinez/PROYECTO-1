@@ -1,0 +1,9 @@
+{
+    "conteo_por_categoria": {
+        "Libros": 2,
+        "Películas": 1,
+        "Música": 3
+    },
+    "total_elementos": 6,
+    "promedio_puntuacion_general": 8.0
+}
